@@ -6,7 +6,6 @@ import { Recipe } from './recipe.model';
   providedIn: 'root'
 })
 export class RecipesService {
-  recipeChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
     {
@@ -39,7 +38,5 @@ export class RecipesService {
     this.recipes = this.recipes.filter(recipe => {
       return recipe.id !== recipeId;
     });
-
-    this.recipeChanged.next(this.recipes);
   }
 }
